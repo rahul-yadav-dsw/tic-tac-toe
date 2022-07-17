@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import Head from "next/head";
-import Scoreboard from "./scoreboard";
+import Scoreboard from "./scoreBoard";
 import Board from "./board";
 const all_cells = Array.apply(null, Array(9)).map(function () {});
 
