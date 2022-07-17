@@ -15,7 +15,7 @@ const Welcome = () => {
     if (session) return;
     sessionStorage.setItem("session", uuidv4());
     setSession(sessionStorage.getItem("session"));
-  }, []);
+  }, [session]);
   async function playOffline() {
     // router
     await Router.push("/ttt");

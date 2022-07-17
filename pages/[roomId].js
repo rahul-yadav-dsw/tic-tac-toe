@@ -1,14 +1,12 @@
 import React, { useEffect } from "react";
 import OnlineBoard from "../components/onlineBoard/onlineBoard";
-import io from "Socket.IO-client";
+import io from "socket.io-client";
 
 const RoomId = ({ roomId, result }) => {
   useEffect(() => {
-    const session = sessionStorage.getItem("session");
+    // const session = sessionStorage.getItem("session");
     socketInitializer().catch((e) => console.log(e));
-    console.log(result.room.starter === session);
-    console.log(result);
-  }, [result]);
+  }, []);
   const socketInitializer = async () => {
     await fetch("/api/socket");
     const socket = io();

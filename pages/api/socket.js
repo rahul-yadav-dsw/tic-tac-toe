@@ -1,4 +1,4 @@
-import { Server } from "Socket.IO";
+import { Server } from "socket.io";
 export default function socketHandler(req, res) {
   if (req.socket.server.io);
   else {
