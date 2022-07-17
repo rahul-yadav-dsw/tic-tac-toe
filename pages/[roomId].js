@@ -24,12 +24,14 @@ const RoomId = ({ roomId, result }) => {
 
 export default RoomId;
 
-export async function getServerSideProps({ params }) {
+export async function getServerSideProps({ params, req }) {
   const roomId = params.roomId;
-
-  const result = await fetch(`http://localhost:3000/api/checkRoom/${roomId}`, {
-    method: "POST",
-  }).then((r) => r.json());
+  const result = await fetch(
+    `http://${req.rawHeaders[1]}/api/checkRoom/${roomId}`,
+    {
+      method: "POST",
+    }
+  ).then((r) => r.json());
   return {
     props: { roomId: roomId, result: result },
   };

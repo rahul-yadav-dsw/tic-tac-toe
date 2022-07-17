@@ -11,6 +11,7 @@ const Welcome = () => {
   const inputRef = useRef(null);
   const [session, setSession] = useState(null);
   useEffect(() => {
+    process.env.URL = window.location.origin;
     setSession(sessionStorage.getItem("session"));
     if (session) return;
     sessionStorage.setItem("session", uuidv4());
