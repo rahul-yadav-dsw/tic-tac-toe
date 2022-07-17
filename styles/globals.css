@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
 body {
   padding: 0;
@@ -14,3 +18,122 @@ a {
 * {
   box-sizing: border-box;
 }
+
+@layer components {
+  .x {
+    @apply after:bg-gray-800 after:w-2 after:h-20 before:bg-gray-800 before:w-2 before:h-20 before:rotate-45 after:-rotate-45 after:rounded-md before:rounded-md;
+  }
+
+  .circle {
+    @apply after:bg-white before:bg-gray-800 before:rounded-full after:rounded-full before:w-20 after:w-16 before:h-20 after:h-16
+  }
+  .smallX {
+    @apply after:bg-gray-800 after:w-1 after:h-8 before:bg-gray-800 before:w-1 before:h-8 before:rotate-45 after:-rotate-45 after:rounded-md before:rounded-md;
+  }
+
+  .smallCircle {
+    @apply after:bg-white before:bg-gray-800 before:rounded-full after:rounded-full before:w-9 after:w-7 before:h-9 after:h-7
+  }
+}
+.x,
+.circle{
+animation: zoom linear .2s;
+}
+.cell:first-child,
+.cell:nth-child(2),
+.cell:nth-child(3) {
+  border-top: none;
+}
+
+.cell:nth-child(3n+1) {
+  border-left: none;
+}
+
+.cell.x,
+.cell.circle {
+  cursor: not-allowed;
+}
+
+.cell:nth-child(3n+3) {
+  border-right: none;
+}
+
+.cell:last-child,
+.cell:nth-child(8),
+.cell:nth-child(7) {
+  border-bottom: none;
+}
+
+.line {
+  position: absolute;
+  width: 100%;
+  height: .5rem;
+  /* animation: line forwards 2s; */
+  transform: scale(0);
+  border-radius: 0.75rem;
+}
+
+@keyframes line45 {
+  0% {
+    transform: rotate(45deg) scale(0);
+  }
+
+  100% {
+    /* top:50%; */
+    transform: rotate(45deg) scale(1);
+  }
+}
+
+@keyframes line-45 {
+  0% {
+    transform: rotate(-45deg) scale(0);
+  }
+
+  100% {
+    /* top:50%; */
+    transform: rotate(-45deg) scale(1);
+  }
+}
+
+@keyframes line0 {
+  0% {
+    transform: rotate(0deg) scale(0);
+  }
+
+  100% {
+    /* top:50%; */
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+@keyframes line90 {
+  0% {
+    transform: rotate(90deg) scale(0);
+  }
+
+  100% {
+    transform: rotate(90deg) scale(1);
+  }
+}
+
+@keyframes zoom {
+  0%{
+    transform:  scale(0);
+    border:none;
+  }
+  99%
+  {border: none;}
+  100%{
+    transform:  scale(1);
+  }
+}
+/* content: "";
+    background: red;
+    width: 100%;
+    height: 5px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* top: calc(5*16.6%); */
