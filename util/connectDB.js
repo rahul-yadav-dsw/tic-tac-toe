@@ -4,6 +4,7 @@ const connection = {};
 const connectDB = async () => {
   if (connection.isConnected) return;
   const db = await mongoose.connect(process.env.DB);
+  console.log(process.env.DB);
   connection.isConnected = db.connections[0];
 };
-export default  connectDB;
+export default connectDB;

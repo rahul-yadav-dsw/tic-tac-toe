@@ -12,7 +12,6 @@ export default async function handler(req, res) {
     const { joinroom } = req.query;
     const body = JSON.parse(req.body);
     const { session } = body;
-    console.log(body);
     const room = await Room.findOne({ roomName: joinroom });
     if (!room) {
       const room = await Room.create({
