@@ -147,7 +147,7 @@ const Welcome = () => {
                   Play offline
                 </button>
               </div>
-              <div className={"text-center"}>OR</div>
+              {/* <div className={"text-center"}>OR</div>
               <div className={"h-2/3 flex justify-evenly items-center"}>
                 <button
                   className={
@@ -165,7 +165,7 @@ const Welcome = () => {
                 >
                   Join a Match
                 </button>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
