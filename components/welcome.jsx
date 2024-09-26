@@ -144,7 +144,7 @@ const Welcome = () => {
                   }
                   onClick={playOffline}
                 >
-                  Play offline
+                  Start The Game!!!!
                 </button>
               </div>
               {/* <div className={"text-center"}>OR</div>
